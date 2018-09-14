@@ -10,3 +10,11 @@ div.sample-div {
   top: 5%;
   left: 5%;
 }
+
+ul {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  background-color: gray;
+}

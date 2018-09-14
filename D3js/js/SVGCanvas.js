@@ -8,6 +8,7 @@ function SVGCanvas(options) {
   this.options.w = options.w || 250
   this.options.addTo = options.addTo || 'body' // Where to add the SVG (a css selector)
   this.options.addBorderRect = options.addBorderRect // Whether to add a border around the SVG.
+  this.options.hyperlink = options.hyperlink || null
 
   // Make the SVG
   this.svg = d3
@@ -192,6 +193,9 @@ SVGCanvas.prototype.makeDragBehavior = function() {
     return function() {
       if (!(self.Rect.r === null) & !d3.event.sourceEvent.shiftKey) {
         self.addRect.end()
+        if (self.options.hyperlink) {
+          self.options.hyperlink.ReadDataAndBindToList()
+        }
       }
       if (d3.event.sourceEvent.shiftKey) {
         null
