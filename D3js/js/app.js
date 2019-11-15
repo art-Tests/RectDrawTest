@@ -1,8 +1,36 @@
 var data = [
-  { x: 50, y: 50, w: 50, h: 50, fill: '#ff0000' },
-  { x: 350, y: 350, w: 70, h: 30, fill: '#00cc00' },
-  { x: 450, y: 250, w: 200, h: 60, fill: '#0000ff' },
-  { x: 550, y: 350, w: 90, h: 100, fill: '#ff9900' }
+  {
+    x: 50,
+    y: 50,
+    w: 50,
+    h: 50,
+    fill: '#ff0000',
+    url: 'http://www.google.com.tw'
+  },
+  {
+    x: 350,
+    y: 350,
+    w: 70,
+    h: 30,
+    fill: '#00cc00',
+    url: 'http://www.google.com.tw'
+  },
+  {
+    x: 450,
+    y: 250,
+    w: 200,
+    h: 60,
+    fill: '#0000ff',
+    url: 'http://www.google.com.tw'
+  },
+  {
+    x: 550,
+    y: 350,
+    w: 90,
+    h: 100,
+    fill: '#ff9900',
+    url: 'http://www.google.com.tw'
+  }
 ]
 var point = {
   x: 0,
@@ -57,9 +85,12 @@ svg
     },
     fill: function(d) {
       return d.fill
+    },
+    onclick: function(d) {
+      return window.open(d.url)
     }
   })
-  .call(drag)
+// .call(drag)
 
 //=======================
 

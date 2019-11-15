@@ -8,6 +8,25 @@
 </head>
 
 <body>
+    <h3>透過 d3.js 讓使用者手動繪製 SVG 矩形</h3>
+    <p>
+        模擬使用者於後台設定介面，選取圖片上的某一個區塊，並將區塊座標記錄下來
+    </p>
+    <p>還缺少的部分：
+        <ol>
+            <li>選取矩形後須要讓使用者輸入該矩形的超連結</li>
+            <li>將選取範圍動態建立 Form 裡面的 Hidden 物件</li>
+            <li>送出表單之後將資料傳遞到後端寫入資料庫</li>
+        </ol>
+    </p>
+    <hr />
+    <form method="POST">
+        <label>Link</label>
+        <input type="text" value="" placeholder="Input Hyper Link Url" style="width:400px" />
+        <br />
+        <input type="button" value="Submit" />
+    </form>
+    <img src="pages/74.jpg" class="pic" />
     <div class="sample-div">
     </div>
     <ul id="list"> </ul>
@@ -15,13 +34,48 @@
     <script src="./js/SVGCanvas.js"></script>
     <script src="./js/HyperLink.js"></script>
     <script type="text/javascript">
+        var data = [
+            {
+                x: 50,
+                y: 50,
+                w: 50,
+                h: 50,
+                fill: '#ff0000',
+                url: 'http://www.google.com.tw'
+            },
+            {
+                x: 350,
+                y: 350,
+                w: 70,
+                h: 30,
+                fill: '#00cc00',
+                url: 'http://www.google.com.tw'
+            },
+            {
+                x: 450,
+                y: 250,
+                w: 200,
+                h: 60,
+                fill: '#0000ff',
+                url: 'http://www.google.com.tw'
+            },
+            {
+                x: 550,
+                y: 350,
+                w: 90,
+                h: 100,
+                fill: '#ff9900',
+                url: 'http://www.google.com.tw'
+            }
+        ]
         var h = new HyperLink()
         options = {
-            h: 500,
-            w: 800,
+            h: 600,
+            w: 480,
             addTo: '.sample-div',
             addBorderRect: true,
-            hyperlink: h
+            hyperlink: h,
+            data: data
         }
         var c = new SVGCanvas(options);
 

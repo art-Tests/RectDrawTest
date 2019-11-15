@@ -7,10 +7,16 @@ rect.rect-main {
 
 div.sample-div {
   position: absolute;
-  top: 5%;
+  top: 30%;
   left: 5%;
 }
-
+img.pic {
+  height: 600px;
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  left: 5%;
+}
 ul {
   position: fixed;
   bottom: 0;

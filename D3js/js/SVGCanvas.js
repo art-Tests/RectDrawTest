@@ -9,6 +9,7 @@ function SVGCanvas(options) {
   this.options.addTo = options.addTo || 'body' // Where to add the SVG (a css selector)
   this.options.addBorderRect = options.addBorderRect // Whether to add a border around the SVG.
   this.options.hyperlink = options.hyperlink || null
+  this.options.data = options.data || []
 
   // Make the SVG
   this.svg = d3
@@ -29,6 +30,24 @@ function SVGCanvas(options) {
       .attr('opacity', 0.25)
       .attr('fill-opacity', 0.0)
       .attr('class', 'border-rect')
+  }
+
+  // Add Data if Exist
+  console.log(this.options.data)
+  if (this.options.data) {
+    console.log(this.svg)
+    // this.svg
+    //   .data(data)
+    //   .enter()
+    //   .append('rect')
+    //   .attr({
+    //     x: d => d.x,
+    //     y: d => d.y,
+    //     width: d => d.w,
+    //     height: d => d.h,
+    //     fill: d => d.fill,
+    //     url: d => d.url
+    //   })
   }
 
   // Add zoom and pan group
